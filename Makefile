@@ -6,7 +6,7 @@ LIBRARY_PATH=-Lpath/to/library
 CFLAGS=
 LFLAGS=-lSDL2
 
-SRC=src/main.c src/render.c src/game.c
+SRC=src/main.c src/render.c src/game.c src/utils.c
 OBJ=$(SRC:src/.c=bin/.o)
 EXEC=bin/pong
 

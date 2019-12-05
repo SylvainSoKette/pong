@@ -11,21 +11,6 @@
 #include "render.h"
 #include "utils.h"
 
-typedef struct {
-    bool    is_running;
-    Keys    keys;
-    int     lscore;
-    int     rscore;
-    Entity *lpaddle;
-    Entity *rpaddle;
-    Entity *ball;
-} Game;
-
-enum WALL_SIDE {
-    LEFT_WALL,
-    RIGHT_WALL,
-};
-
 void handle_event(SDL_Event *event, Keys *keys, bool *quit);
 void clamp_paddle_in_game(Entity *paddle);
 void update_left_paddle(double dt, Keys keys, Entity *paddle);
