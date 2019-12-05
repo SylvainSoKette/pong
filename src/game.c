@@ -197,6 +197,11 @@ void game_loop(SDL_Renderer *renderer, Game *game)
         nowTime = SDL_GetTicks();
         deltaTime = ((double)(nowTime - lastTime)) / 1000.0;
 
+        if (deltaTime > 0.15)
+        {
+            deltaTime = 0.15;
+        }
+
         // events
         while (SDL_PollEvent(&event))
         {
