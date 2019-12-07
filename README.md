@@ -8,6 +8,7 @@ I just wanted to practice C for gamedev. This project will most likely evolve ov
 
 ## Dependencies
 
+- Linux
 - SDL2
 
 ## How To Build
