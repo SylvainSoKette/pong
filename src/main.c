@@ -9,7 +9,7 @@ typedef struct {
 void the_test()
 {
     printf("Ola struct !\n");
-} 
+}
 
 int main(int argc, char **argv)
 {
@@ -24,8 +24,7 @@ int main(int argc, char **argv)
 
     start_game(renderer);
 
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
+    clean_SDL_window_and_renderer(&window, &renderer);
     
     return EXIT_SUCCESS;
 }

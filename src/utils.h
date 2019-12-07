@@ -8,6 +8,11 @@
 
 #include <SDL2/SDL.h>
 
+#define WINDOW_WIDTH     480
+#define WINDOW_HEIGHT    270
+#define GAME_TITLE       "Pong"
+#define TARGET_FRAMERATE 300
+
 typedef uint_least8_t  u8;
 typedef uint_least16_t u16;
 typedef uint_least32_t u32;
@@ -17,6 +22,10 @@ typedef int_least8_t  i8;
 typedef int_least16_t i16;
 typedef int_least32_t i32;
 typedef int_least64_t i64;
+
+extern u32 WINDOW_FLAGS;
+extern u32 TARGET_FRAMETIME;
+extern u32 NUMBERS[];
 
 typedef struct Keys {
     bool E_KEY;
