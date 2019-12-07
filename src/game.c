@@ -115,9 +115,9 @@ void update_ball(double dt, Game* game)
             // reverse ball direction
             ball->dx = -ball->dx;
             // transfert paddle energy to ball
-            ball->dy += lpaddle->dy * 100.0f;
+            ball->dy += lpaddle->dy * ball->speed * 0.1f;
             // add a little more speed;
-            ball->dx += 2.5f;
+            ball->dx += 5.0f;
         }
     }
 
@@ -132,9 +132,9 @@ void update_ball(double dt, Game* game)
             // reverse ball direction
             ball->dx = -ball->dx;
             // transfer paddle energy to ball
-            ball->dy += rpaddle->dy * 100.0f;
+            ball->dy += rpaddle->dy * ball->speed * 0.1f;
             // add a little more speed
-            ball->dx -= 2.5f;
+            ball->dx -= 5.0f;
         }
     }
 
@@ -161,22 +161,23 @@ void init_ball(Entity *ball, Color color)
     float dx;
     float dy;
 
-    if (rand()%2 == 1)
-        dx = 150.0f;
-    else
-        dx = -150.0f;
-    dy = (rand()%201 - 100) / 100.0f;
-
-    dy = dy * 100.0f;
-
     ball->x = WINDOW_WIDTH / 2;
     ball->y = (WINDOW_HEIGHT / 2) - 4.0f;
-    ball->dx = dx;
-    ball->dy = dy;
     ball->w = 8;
     ball->h = 8;
-    ball->speed = 0.0f;
+    ball->speed = 100.0f;
     ball->color = color;
+
+    if (rand()%2 == 1)
+        dx = ball->speed;
+    else
+        dx = -ball->speed;
+
+    dy = (rand()%201 - 100) / 100.0f;
+    dy = dy * ball->speed;
+
+    ball->dx = dx;
+    ball->dy = dy;
 }
 
 void game_loop(SDL_Renderer *renderer, Game *game)
@@ -230,7 +231,7 @@ void game_loop(SDL_Renderer *renderer, Game *game)
         render_entity(renderer, *game->lpaddle);
         render_entity(renderer, *game->rpaddle);
         render_entity(renderer, *game->ball);
-        
+
         end_render(renderer);
     }
 }

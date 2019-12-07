@@ -11,7 +11,7 @@
 #define WINDOW_WIDTH     480
 #define WINDOW_HEIGHT    270
 #define GAME_TITLE       "Pong"
-#define TARGET_FRAMERATE 300
+#define TARGET_FRAMERATE 60
 
 typedef uint_least8_t  u8;
 typedef uint_least16_t u16;
