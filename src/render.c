@@ -50,6 +50,17 @@ void draw_rect(SDL_Renderer *r, int x, int y, int w, int h, Color c)
     }
 }
 
+void prepare_render(SDL_Renderer *r)
+{
+    SDL_SetRenderDrawColor(r, 40, 40, 40, 255);
+    SDL_RenderClear(r);
+}
+
+void end_render(SDL_Renderer *r)
+{
+    SDL_RenderPresent(r);
+}
+
 void render_terrain(SDL_Renderer *r, Color c)
 {
     draw_rect(

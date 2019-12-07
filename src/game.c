@@ -223,14 +223,15 @@ void game_loop(SDL_Renderer *renderer, Game *game)
         update_ball(deltaTime, game);
 
         // render
-        SDL_SetRenderDrawColor(renderer, 40, 40, 40, 255);
-        SDL_RenderClear(renderer);
+        prepare_render(renderer);
+
         render_score(renderer, game);
         render_terrain(renderer, game->ball->color);
         render_entity(renderer, *game->lpaddle);
         render_entity(renderer, *game->rpaddle);
         render_entity(renderer, *game->ball);
-        SDL_RenderPresent(renderer);
+        
+        end_render(renderer);
     }
 }
 

@@ -19,6 +19,8 @@ extern u32 NUMBERS[];
 
 void init_SDL_window_and_renderer(SDL_Window **w, SDL_Renderer **r);
 void draw_rect(SDL_Renderer *r, int x, int y, int w, int h, Color c);
+void prepare_render(SDL_Renderer *r);
+void end_render(SDL_Renderer *r);
 
 void render_terrain(SDL_Renderer *r, Color c);
 void render_entity(SDL_Renderer *r, Entity e);
