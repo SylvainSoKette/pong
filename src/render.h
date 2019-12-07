@@ -7,10 +7,13 @@
 
 #include "utils.h"
 
-extern const u32 WINDOW_WIDTH;
-extern const u32 WINDOW_HEIGHT;
-extern const u32 WINDOW_FLAGS;
-extern const char *GAME_TITLE;
+#define WINDOW_WIDTH     480
+#define WINDOW_HEIGHT    270
+#define GAME_TITLE       "Pong"
+#define TARGET_FRAMERATE 120
+
+extern u32 WINDOW_FLAGS;
+extern u32 TARGET_FRAMETIME;
 
 extern u32 NUMBERS[];
 

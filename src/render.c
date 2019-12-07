@@ -1,13 +1,11 @@
 #include "render.h"
 
-const u32 WINDOW_WIDTH = 480;
-const u32 WINDOW_HEIGHT = 270;
-const u32 WINDOW_FLAGS =
+u32 WINDOW_FLAGS =
 //    SDL_WINDOW_FULLSCREEN |
     SDL_WINDOW_SHOWN |
     SDL_WINDOW_OPENGL |
     SDL_WINDOW_BORDERLESS;
-const char *GAME_TITLE = "Pong";
+u32 TARGET_FRAMETIME = 1000 / TARGET_FRAMERATE;
 
 u32 NUMBERS [10] = {                    // 32 = 8 rows * 4 width
     0b00001111100110011001100110011111, // 0

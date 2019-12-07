@@ -115,7 +115,7 @@ void update_ball(double dt, Game* game)
             // reverse ball direction
             ball->dx = -ball->dx;
             // transfert paddle energy to ball
-            ball->dy += lpaddle->dy * 1000.0f;
+            ball->dy += lpaddle->dy * 100.0f;
             // add a little more speed;
             ball->dx += 2.5f;
         }
@@ -132,7 +132,7 @@ void update_ball(double dt, Game* game)
             // reverse ball direction
             ball->dx = -ball->dx;
             // transfer paddle energy to ball
-            ball->dy += rpaddle->dy * 1000.0f;
+            ball->dy += rpaddle->dy * 100.0f;
             // add a little more speed
             ball->dx -= 2.5f;
         }
@@ -184,6 +184,7 @@ void game_loop(SDL_Renderer *renderer, Game *game)
     SDL_Event event; 
     u32       nowTime;
     u32       lastTime;
+    u32       frameTime;
     double    deltaTime;
 
     nowTime = SDL_GetTicks();
@@ -195,11 +196,19 @@ void game_loop(SDL_Renderer *renderer, Game *game)
         // time
         lastTime = nowTime;
         nowTime = SDL_GetTicks();
+        frameTime = nowTime - lastTime;
         deltaTime = ((double)(nowTime - lastTime)) / 1000.0;
 
-        if (deltaTime > 0.15)
+        // frame limiter
+        if (frameTime < TARGET_FRAMETIME)
         {
-            deltaTime = 0.15;
+            SDL_Delay(TARGET_FRAMETIME - frameTime);
+        }
+
+        // deltatime limiter in case of long frame
+        if (deltaTime > TARGET_FRAMETIME / 1000.0)
+        {
+            deltaTime = TARGET_FRAMETIME / 1000.0;
         }
 
         // events
