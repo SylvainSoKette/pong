@@ -24,6 +24,17 @@ void clean_SDL_window_and_renderer(SDL_Window **w, SDL_Renderer **r)
     SDL_DestroyWindow(*w);   
 }
 
+void prepare_render(SDL_Renderer *r)
+{
+    SDL_SetRenderDrawColor(r, 40, 40, 40, 255);
+    SDL_RenderClear(r);
+}
+
+void end_render(SDL_Renderer *r)
+{
+    SDL_RenderPresent(r);
+}
+
 void draw_rect(SDL_Renderer *r, int x, int y, int w, int h, Color c)
 {
     SDL_SetRenderDrawColor(r, c.r, c.g, c.b, c.a);
@@ -34,17 +45,6 @@ void draw_rect(SDL_Renderer *r, int x, int y, int w, int h, Color c)
             SDL_RenderDrawPoint(r, dx, dy);
         }
     }
-}
-
-void prepare_render(SDL_Renderer *r)
-{
-    SDL_SetRenderDrawColor(r, 40, 40, 40, 255);
-    SDL_RenderClear(r);
-}
-
-void end_render(SDL_Renderer *r)
-{
-    SDL_RenderPresent(r);
 }
 
 void render_terrain(SDL_Renderer *r, Color c)
