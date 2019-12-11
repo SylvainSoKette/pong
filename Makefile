@@ -13,6 +13,7 @@ EXEC=bin/pong
 all: $(EXEC)
 
 $(EXEC): $(OBJ)
+	mkdir -p bin/
 	$(CC) $(STD) $^ $(LFLAGS) $(INCLUDE_PATH) -o $@
 #	$(CC) $(STD) $^ $(INCLUDE_PATH) $(LIBRARY_PATH) $(CFLAGS) $(LFLAGS) -o $@
 
@@ -20,5 +21,5 @@ bin/%.o: src/%.c
 	$(CC) $(STD) -c $< $(LFLAGS) $(INCLUDE_PATH) -o $@
 
 clean:
-	rm -rf bin/*.o
+	rm -f bin/*.o
 
