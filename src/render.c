@@ -47,24 +47,7 @@ void draw_rect(SDL_Renderer *r, int x, int y, int w, int h, Color c)
     }
 }
 
-void render_terrain(SDL_Renderer *r, Color c)
-{
-    draw_rect(
-        r,
-        (WINDOW_WIDTH / 2) - 2,
-        0,
-        4,
-        WINDOW_HEIGHT,
-        c
-    );
-}
-
-void render_entity(SDL_Renderer *r, Entity e)
-{
-    draw_rect(r, (int)(e.x), (int)(e.y), e.w, e.h, e.color);
-}
-
-void draw_score(SDL_Renderer *r, int x, int y, u32 score, Color c)
+void draw_number(SDL_Renderer *r, int x, int y, u32 number, Color c)
 {
     bool bit;
 
@@ -76,7 +59,7 @@ void draw_score(SDL_Renderer *r, int x, int y, u32 score, Color c)
     {
         for (u8 i = 0; i < width; i++)
         {
-            bit = get_bit_at_index(NUMBERS[score % 10], 31 - (width * j + i));
+            bit = get_bit_at_index(NUMBERS[number % 10], 31 - (width * j + i));
             if (bit) {
                 draw_rect(
                     r,
@@ -91,10 +74,28 @@ void draw_score(SDL_Renderer *r, int x, int y, u32 score, Color c)
     }
 }
 
-void render_score(SDL_Renderer *r, Game *game)
+void draw_terrain(SDL_Renderer *r, Color c)
+{
+    draw_rect(
+        r,
+        (WINDOW_WIDTH / 2) - 2,
+        0,
+        4,
+        WINDOW_HEIGHT,
+        c
+    );
+}
+
+void draw_entity(SDL_Renderer *r, Entity e)
+{
+    draw_rect(r, (int)(e.x), (int)(e.y), e.w, e.h, e.color);
+}
+
+
+void draw_score(SDL_Renderer *r, Game *game)
 {
     Color color = game->ball->color;
 
-    draw_score(r, WINDOW_WIDTH / 2 - 64, 16, game->lscore, color);
-    draw_score(r, WINDOW_WIDTH / 2 + 32, 16, game->rscore, color);
+    draw_number(r, WINDOW_WIDTH / 2 - 64, 16, game->lscore, color);
+    draw_number(r, WINDOW_WIDTH / 2 + 32, 16, game->rscore, color);
 }

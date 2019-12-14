@@ -13,10 +13,10 @@ void prepare_render(SDL_Renderer *r);
 void end_render(SDL_Renderer *r);
 
 void draw_rect(SDL_Renderer *r, int x, int y, int w, int h, Color c);
+void draw_number(SDL_Renderer *r, int x, int y, u32 number, Color c);
 
-void render_terrain(SDL_Renderer *r, Color c);
-void render_entity(SDL_Renderer *r, Entity e);
-void draw_score(SDL_Renderer *r, int x, int y, u32 score, Color c);
-void render_score(SDL_Renderer *r, Game *game);
+void draw_terrain(SDL_Renderer *r, Color c);
+void draw_entity(SDL_Renderer *r, Entity e);
+void draw_score(SDL_Renderer *r, Game *game);
 
 #endif // RENDER_H

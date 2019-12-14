@@ -226,11 +226,11 @@ void game_loop(SDL_Renderer *renderer, Game *game)
         // render
         prepare_render(renderer);
 
-        render_score(renderer, game);
-        render_terrain(renderer, game->ball->color);
-        render_entity(renderer, *game->lpaddle);
-        render_entity(renderer, *game->rpaddle);
-        render_entity(renderer, *game->ball);
+        draw_score(renderer, game);
+        draw_terrain(renderer, game->ball->color);
+        draw_entity(renderer, *game->lpaddle);
+        draw_entity(renderer, *game->rpaddle);
+        draw_entity(renderer, *game->ball);
 
         end_render(renderer);
     }
