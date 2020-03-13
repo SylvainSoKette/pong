@@ -3,7 +3,7 @@ STD=-std=c11
 
 INCLUDE_PATH=-Isrc
 LIBRARY_PATH=-Lpath/to/library
-CFLAGS=
+CFLAGS=-O3
 LFLAGS=-lSDL2
 
 SRC=src/main.c src/render.c src/game.c src/utils.c
@@ -14,11 +14,10 @@ all: $(EXEC)
 
 $(EXEC): $(OBJ)
 	mkdir -p bin/
-	$(CC) $(STD) $^ $(LFLAGS) $(INCLUDE_PATH) -o $@
-#	$(CC) $(STD) $^ $(INCLUDE_PATH) $(LIBRARY_PATH) $(CFLAGS) $(LFLAGS) -o $@
+	$(CC) $(STD) $(CFLAGS) $^ $(LFLAGS) $(INCLUDE_PATH) -o $@
 
 bin/%.o: src/%.c
-	$(CC) $(STD) -c $< $(LFLAGS) $(INCLUDE_PATH) -o $@
+	$(CC) $(STD) $(CFLAGS) -c $< $(LFLAGS) $(INCLUDE_PATH) -o $@
 
 clean:
 	rm -f bin/*.o
