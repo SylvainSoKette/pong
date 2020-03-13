@@ -6,6 +6,8 @@ You probably know this game.
 
 I just wanted to practice C for gamedev. This project will most likely evolve over time. I may end up doing some stupid stuff like make a render engine using Vulkan ?
 
+![the paddle game](./img/pong.png "pong!")
+
 ## Dependencies
 
 ### Tools
