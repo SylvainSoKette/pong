@@ -18,7 +18,7 @@ I just wanted to practice C for gamedev. This project will most likely evolve ov
 ### libraries
 - SDL2
 
-## How To Build
+## How to build and run
 
 - run the ```./run``` script
 
