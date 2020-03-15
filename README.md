@@ -29,6 +29,7 @@ OR
 
 ## How to play
 
-- left player uses the 'E' and 'D' keys to go up and down respectively
-- right players uses the up and down arrows, to go up and down.
-
+- Left player uses the 'E' and 'D' keys to go up and down respectively
+- Right players uses the up and down arrows, to go up and down.
+- You can transfer your paddle's inertia to the ball.
+- The ball goes a little faster everytime it touches a paddle.
