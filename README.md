@@ -27,3 +27,8 @@ OR
 - ```make```
 - ```bin/pong```
 
+## How to play
+
+- left player uses the 'E' and 'D' keys to go up and down respectively
+- right players uses the up and down arrows, to go up and down.
+
