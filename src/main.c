@@ -2,21 +2,8 @@
 #include "utils.h"
 #include "game.h"
 
-typedef struct {
-    void (*func)(void);
-} UnTruc;
-
-void the_test()
-{
-    printf("Ola struct !\n");
-}
-
 int main(int argc, char **argv)
 {
-    UnTruc truc;
-    truc.func = &the_test;
-    truc.func();
-
     SDL_Window   *window;
     SDL_Renderer *renderer;
 
