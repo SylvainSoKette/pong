@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef RENDER_H
-#define RENDER_H 
+#ifndef __RENDER_H
+#define __RENDER_H 
 
 #include <SDL2/SDL.h>
 

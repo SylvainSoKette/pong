@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef __UTILS_H
+#define __UTILS_H
 
 #include <stdlib.h>
 #include <stdbool.h>
@@ -28,45 +28,45 @@ extern u32 TARGET_FRAMETIME;
 extern u32 NUMBERS[];
 
 typedef struct Keys {
-    bool E_KEY;
-    bool D_KEY;
-    bool UP_KEY;
-    bool DOWN_KEY;
+	bool E_KEY;
+	bool D_KEY;
+	bool UP_KEY;
+	bool DOWN_KEY;
 } Keys;
 
 typedef struct Color {
-    u8 r;
-    u8 g;
-    u8 b;
-    u8 a;
+	u8 r;
+	u8 g;
+	u8 b;
+	u8 a;
 } Color;
 
 typedef struct Entity {
-    float x;
-    float y;
-    float dx;
-    float dy;
-    int   w;
-    int   h;
-    float speed;
-    Color color;
+	float x;
+	float y;
+	float dx;
+	float dy;
+	int   w;
+	int   h;
+	float speed;
+	Color color;
 } Entity;
 
 typedef struct Game {
-    bool    is_running;
-    Keys    keys;
-    int     lscore;
-    int     rscore;
-    Entity *lpaddle;
-    Entity *rpaddle;
-    Entity *ball;
+	bool    is_running;
+	Keys    keys;
+	int     lscore;
+	int     rscore;
+	Entity *lpaddle;
+	Entity *rpaddle;
+	Entity *ball;
 } Game;
 
 enum WALL_SIDE {
-    LEFT_WALL,
-    RIGHT_WALL,
+	LEFT_WALL,
+	RIGHT_WALL,
 };
 
 int get_bit_at_index(u32 number, u8 index);
 
-#endif // UTILS_H
+#endif // __UTILS_H

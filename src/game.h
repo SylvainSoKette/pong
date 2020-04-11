@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef GAME_H
-#define GAME_H
+#ifndef __GAME_H
+#define __GAME_H
 
 #include <time.h>
 #include <math.h>
@@ -23,4 +23,4 @@ void game_loop(SDL_Renderer *renderer, Game *game);
 void reset_game(Game *game);
 void start_game(SDL_Renderer *renderer);
 
-#endif // GAME_H
+#endif // __GAME_H
