@@ -43,13 +43,8 @@ void draw_rect(SDL_Renderer *renderer,
                Color c)
 {
 	SDL_SetRenderDrawColor(renderer, c.r, c.g, c.b, c.a);
-	for (int dy = y; dy < y + h; dy++)
-	{
-		for (int dx = x; dx < x + w; dx++)
-		{
-			SDL_RenderDrawPoint(renderer, dx, dy);
-		}
-	}
+	SDL_Rect rect = { x, y, w, h};
+	SDL_RenderFillRect(renderer, &rect);
 }
 
 void draw_number(SDL_Renderer *r, int x, int y, u32 number, Color c)
