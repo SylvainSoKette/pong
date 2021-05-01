@@ -6,7 +6,7 @@ LIBRARY_PATH=-Lpath/to/library
 CFLAGS=-O3
 LFLAGS=-lSDL2
 
-SRC=src/main.c src/render.c src/game.c src/utils.c
+SRC=src/main.c src/render.c src/game.c src/utils.c src/game_constants.c
 OBJ=$(SRC:src/.c=bin/.o)
 EXEC=bin/pong
 
@@ -21,4 +21,3 @@ bin/%.o: src/%.c
 
 clean:
 	rm -f bin/*.o
-

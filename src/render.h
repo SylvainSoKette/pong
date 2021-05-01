@@ -3,11 +3,8 @@
 #include <SDL2/SDL.h>
 
 #include "utils.h"
-#include "game.h"
-
-// Forward declarations
-typedef struct Entity_ Entity;
-typedef struct Game_ Game;
+#include "game_types.h"
+#include "game_constants.h"
 
 
 // Definitions

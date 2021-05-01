@@ -6,51 +6,8 @@
 #include <SDL2/SDL.h>
 
 #include "render.h"
-
-
-// constants
-#define WINDOW_WIDTH     480
-#define WINDOW_HEIGHT    270
-#define GAME_TITLE       "Pong"
-#define TARGET_FRAMERATE 60
-extern u32 WINDOW_FLAGS;
-extern u32 TARGET_FRAMETIME;
-extern u32 NUMBERS[];
-
-
-// data structures
-enum WALL_SIDE {
-	LEFT_WALL,
-	RIGHT_WALL,
-};
-
-typedef struct Keys {
-	bool E_KEY;
-	bool D_KEY;
-	bool UP_KEY;
-	bool DOWN_KEY;
-} Keys;
-
-typedef struct Entity_ {
-	float x;
-	float y;
-	float dx;
-	float dy;
-	int   w;
-	int   h;
-	float speed;
-	Color color;
-} Entity;
-
-typedef struct Game_ {
-	bool    is_running;
-	Keys    keys;
-	int     lscore;
-	int     rscore;
-	Entity *lpaddle;
-	Entity *rpaddle;
-	Entity *ball;
-} Game;
+#include "game_types.h"
+#include "game_constants.h"
 
 
 void handle_event(SDL_Event *event, Keys *keys, bool *quit);
