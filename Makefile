@@ -1,7 +1,7 @@
 CC=gcc
 STD=-std=c11
 
-INCLUDE_PATH=-Isrc
+INCLUDE_PATH=-Iinclude
 LIBRARY_PATH=-Lpath/to/library
 CFLAGS=-O3
 LFLAGS=-lSDL2
